@@ -6,6 +6,7 @@ env:
  - PYMONGO_VERSION=">=2.2.1" MONGOENGINE_VERSION="==0.6.20"
  - PYMONGO_VERSION=">=2.2.1" MONGOENGINE_VERSION=">=0.6.20,<=0.8.1"
 services: mongodb
+
 install:
  - pip install "pymongo$PYMONGO_VERSION"
  - pip install "mongoengine$MONGOENGINE_VERSION"
@@ -15,5 +16,6 @@ install:
 before_script:
  - pep8 datastream tests docs
  - pylint datastream tests docs || true
+
 script:
  - python -Wall setup.py test
